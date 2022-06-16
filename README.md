@@ -20,7 +20,7 @@ Presentation used in our pitch can be found here: [presentation/KeepCoding DevOp
 
 ## Project distribution
 
-1.- [CORE Infrastructure Deployment](https://github.com/KeepCodingCloudDevops5/keepcoding-masters-proyecto-final/tree/main/infrastructure/core): contains the necessary manifests for the deployment of the main infrastructure and the `Kubernetes` cluster.
+1.- [CORE Infrastructure Deployment](https://github.com/KeepCodingCloudDevops5/keepcoding-masters-proyecto-final/tree/main/infrastructure): contains the necessary manifests for the deployment of the main infrastructure and the `Kubernetes` cluster.
 
 2.- [Rancher Cluster Deployment](https://github.com/KeepCodingCloudDevops5/keepcoding-masters-proyecto-final/tree/main/infrastructure/atlantis-rancher-cluster) from `Atlantis`
 
