@@ -22,9 +22,9 @@ The Rancher (Kubernetes) cluster is deployed using Atlantis with a Pull Request,
 
 ### The order of infrastructure deployment is as follows:
 
-1. [Network Deployment](core/vpc/README.md)
-2. [Terraform Backend State Deployment](core/tfbackend/README.md)
-3. [HashiCorp Consul / Vault Deployment](core/vault/README.md)
-4. [AWS EFS Volume Deployment](core/atlantis-efs/README.md) to be used by Atlantis
-5. [Atlantis Deployment](core/atlantis/README.md) (as a deployment automation tool with Terraform)
-6. [Rancher Cluster Deployment Automation with Atlantis and GitHub](atlantis-rancher-cluster/README.md) (Kubernetes cluster based on Rancher RKE using AWS provider)
+1. [Network Deployment](core/vpc)
+2. [Terraform Backend State Deployment](core/tfbackend)
+3. [HashiCorp Consul / Vault Deployment](core/vault)
+4. [AWS EFS Volume Deployment](core/atlantis-efs) to be used by Atlantis
+5. [Atlantis Deployment](core/atlantis) (as a deployment automation tool with Terraform)
+6. [Rancher Cluster Deployment Automation with Atlantis and GitHub](atlantis-rancher-cluster) (Kubernetes cluster based on Rancher RKE using AWS provider)
