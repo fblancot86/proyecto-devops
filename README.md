@@ -20,15 +20,15 @@ Presentation used in our pitch can be found here: [presentation/KeepCoding DevOp
 
 ## Project distribution
 
-1.- [CORE Infrastructure Deployment](https://github.com/jonasmarquez/keepcoding-masters-proyecto-final/tree/main/infrastructure/core): contains the necessary manifests for the deployment of the main infrastructure and the `Kubernetes` cluster.
+1.- [CORE Infrastructure Deployment](https://github.com/KeepCodingCloudDevops5/keepcoding-masters-proyecto-final/tree/main/infrastructure/core): contains the necessary manifests for the deployment of the main infrastructure and the `Kubernetes` cluster.
 
-2.- [Rancher Cluster Deployment](https://github.com/jonasmarquez/keepcoding-masters-proyecto-final/tree/main/infrastructure/atlantis-rancher-cluster) from `Atlantis`
+2.- [Rancher Cluster Deployment](https://github.com/KeepCodingCloudDevops5/keepcoding-masters-proyecto-final/tree/main/infrastructure/atlantis-rancher-cluster) from `Atlantis`
 
-3.- [GitOps Solution Deployment](https://github.com/jonasmarquez/keepcoding-masters-proyecto-final/tree/main/cicd) (ArgoCD): contains the yaml files to deploy the `ArgoCD` Application and the Makefile to run the Image `Docker` build from `Github Actions`.
+3.- [GitOps Solution Deployment](https://github.com/KeepCodingCloudDevops5/keepcoding-masters-proyecto-final/tree/main/cicd) (ArgoCD): contains the yaml files to deploy the `ArgoCD` Application and the Makefile to run the Image `Docker` build from `Github Actions`.
 
-4.- [Application Deployment](https://github.com/jonasmarquez/keepcoding-masters-proyecto-final/tree/main/k8s): directory containing the used `Helm` charts.
+4.- [Application Deployment](https://github.com/KeepCodingCloudDevops5/keepcoding-masters-proyecto-final/tree/main/k8s): directory containing the used `Helm` charts.
 
-5.- [Monitoring and Alerting Deployment](https://github.com/jonasmarquez/keepcoding-masters-proyecto-final/tree/main/monitoring): directoy containing all `Prometheus` and `Grafana` monitoring and alert dashboards, and necessary manifests for configuration.
+5.- [Monitoring and Alerting Deployment](https://github.com/KeepCodingCloudDevops5/keepcoding-masters-proyecto-final/tree/main/monitoring): directoy containing all `Prometheus` and `Grafana` monitoring and alert dashboards, and necessary manifests for configuration.
 
 [Back to the top](#keepcoding-masters-proyecto-final)
 
