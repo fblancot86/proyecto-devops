@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: regcred
+  namespace: flask-api
+data:
+  .dockerconfigjson: >-
+    ewoJImF1dGhzIjogewoJCSJnaGNyLmlvIjogewoJCQkiYXV0aCI6ICJWVk5GVWs1QlRVVTZaMmh3WDFSdE9FOUNXamxrTVVwdFJ6WnVNMlpXV1hNMmRIQlJSRlJqV21ac056QjVOVE5UU1E9PSIKCQl9Cgl9Cn0=
+type: kubernetes.io/dockerconfigjson

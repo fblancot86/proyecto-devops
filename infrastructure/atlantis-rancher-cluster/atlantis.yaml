@@ -1,0 +1,23 @@
+# KeepCoding DevOps & Cloud Computing Full Stack Bootcamp (Final Project)
+# Team: KeepCoding Masters
+# Staff: Jonas Marquez, Ruben Martin, Yilis Ramirez, Francesc Blanco
+# IaC (Infrastructure as Code) & GitOps with Terraform + Atlantis & K8s (Rancher RKE in AWS)
+# Technologies: HashiCorp Terraform & Packer, AWS, Docker, Atlantis
+# --------------------------------------------------------------------------
+
+version: 3
+automerge: false
+delete_source_branch_on_merge: false
+parallel_plan: false
+parallel_apply: false
+projects:
+  - name: rancher
+    dir: ./rancher
+    workspace: nonprod
+    terraform_version: v1.1.4
+    delete_source_branch_on_merge: false
+    autoplan:
+      when_modified: [ "*.tf" ]
+      enabled: true
+    apply_requirements: [ mergeable, approved ]
+    workflow: nonprod

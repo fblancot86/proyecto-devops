@@ -1,0 +1,37 @@
+#!/bin/bash -x
+# KeepCoding DevOps & Cloud Computing Full Stack Bootcamp (Final Project)
+# Team: KeepCoding Masters
+# Staff: Jonas Marquez, Ruben Martin, Yilis Ramirez, Francesc Blanco
+# IaC (Infrastructure as Code) & GitOps with Terraform + Atlantis & K8s (Rancher RKE in AWS)
+# Technologies: HashiCorp Terraform & Packer, AWS, Docker, Atlantis
+# --------------------------------------------------------------------------
+
+sudo tee -a /home/ubuntu/.ssh/authorized_keys <<EOF
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCscT2uuSeNoOBa5Nh69v6asFXQtqcfJjyed+FU+fM3OVXkuoq0D3l6zjc7ClDTI39f6vzeQ1mV1ZmS9HYIra5K1ioztC/Yrmxa9pWmCSF5RmoHo24IzAK02+IleqBzkTR9MdF0+jYzUR7GCYy5sCvmUG6iOE27waxveNHxCR5zPgYYaPu1Ll6vVD2up0UwuaDA17pIW+0Z8nfASkvjjFQ1caIC2CdXQrsMjuJ7gm2XIKRIwhzVfXJuMyNgB0WCIT7VbRNFmgWa3hGg9+LmZOmkUCBX6l5YsEV4Qi/hVJoJcD21Y9uWsVCpaA70cbX/GX4uLtNxKArARJMwidlDo7ET
+EOF
+
+export DEBIAN_FRONTEND=noninteractive
+curl -sL https://releases.rancher.com/install-docker/${docker_version}.sh | sh
+sudo usermod -aG docker ${username}
+
+cat << EOF > /home/ubuntu/rancher.service
+[Unit]
+Description=rancher-server as a service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=on-failure
+RestartSec=10
+ExecStart=/usr/bin/docker run --name %p --rm --privileged -p 80:80 -p 443:443 -e CATTLE_BOOTSTRAP_PASSWORD=admin -v /opt/rancher:/var/lib/rancher rancher/rancher:v2.6-head
+ExecStop=-/usr/bin/docker stop -t 2 %p
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo mv /home/ubuntu/rancher.service /etc/systemd/system
+sudo chown root:root /etc/systemd/system/rancher.service
+sudo chmod 644 /etc/systemd/system/rancher.service
+
+sudo systemctl start rancher.service
